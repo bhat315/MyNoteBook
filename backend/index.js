@@ -24,7 +24,8 @@ app.get('/', (req, res) => {
 // to make input as json
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({ origin: ["https://mynotebook-1-iw5y.onrender.com"], credentials: true }))
+// app.use(cors({ origin: ["https://mynotebook-1-iw5y.onrender.com"], credentials: true }))
+app.use(cors({ origin: [process.env.FRONTEND_URI], credentials: true }))
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000")
